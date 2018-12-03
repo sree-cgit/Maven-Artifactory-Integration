@@ -1,6 +1,6 @@
 pipeline
  {
-   agent {label linux}
+   agent {label 'linux'}
    stages {
       stage('cleaning')
           {
