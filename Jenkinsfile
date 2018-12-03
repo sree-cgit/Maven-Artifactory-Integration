@@ -6,21 +6,21 @@ pipeline
           {
             steps {
                sh "Cleaning Workspace"
-               mvn clean
+               sh 'mvn clean'
                }
           }
       stage('compile')
           {
             steps {
                sh "Compiling"
-               mvn compile
+               sh 'mvn compile'
                }
           }
       stage('Unit Test')
           {
              steps {
                 sh "Unit Testing"
-                mvn test
+                sh 'mvn test'
                 junit 'target/surefire-reports/*.xml'
                 }
           }
@@ -28,7 +28,7 @@ pipeline
           {
              steps {
                 sh "Building a Jar File"
-                mvn package
+                sh 'mvn package'
                 }
           }
       }
